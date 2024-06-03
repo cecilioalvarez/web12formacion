@@ -9,7 +9,7 @@ DROP TABLE IF EXISTS Examen;
 
 CREATE TABLE Examen (
  
-    id int  PRIMARY KEY,
+    id int AUTO_INCREMENT PRIMARY KEY,
     asignatura VARCHAR(255) NOT NULL,
    	texto VARCHAR(255),
     nota number NOT NULL,
