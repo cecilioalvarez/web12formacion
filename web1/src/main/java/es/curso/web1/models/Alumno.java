@@ -21,6 +21,9 @@ public class Alumno {
 		this.nombre = nombre;
 		this.edad = edad;
 	}
+	public Alumno() {
+		super();
+	}
 	
 	
 }
