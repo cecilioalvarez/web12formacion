@@ -46,4 +46,14 @@ public class AlumnoController {
 		return "verexamenes.xhtml";
 		
 	}
+	@GetMapping("/verexamenestotal")
+	public String verExamenesTotal(Model modelo) {
+		List<Examen> lista=examenRepository.buscarExamenes();
+		
+		//asigna a la plantilla una nombre de lista junto con los datos
+		modelo.addAttribute("lista", lista);
+		
+		return "verexamenestotal.xhtml";
+		
+	}
 }

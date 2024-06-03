@@ -1,0 +1,12 @@
+<html>
+<body>
+	lista alumno
+	<table>
+		<tr th:each="examen : ${lista}">
+			<td th:text="${examen.id}"></td>
+			<td th:text="${examen.texto}"></td>
+			<td th:text="${examen.nota}"></td>
+		</tr>
+	</table>
+</body>
+</html>

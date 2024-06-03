@@ -23,4 +23,13 @@ public class ExamenRepository {
 		return consulta.getResultList();
 
 	}
+	
+	public List<Examen> buscarExamenes() {
+
+		TypedQuery<Examen> consulta = em.createQuery("select e from Examen e",
+				Examen.class);
+		
+		return consulta.getResultList();
+
+	}
 }

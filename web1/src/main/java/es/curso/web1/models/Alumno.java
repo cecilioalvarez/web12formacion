@@ -13,40 +13,48 @@ public class Alumno {
 	@Id
 	private String nombre;
 	private int edad;
-	@OneToMany(mappedBy="alumno")
-	private List<Examen> examenes= new ArrayList<Examen>();
-	
-	
+	@OneToMany(mappedBy = "alumno")
+	private List<Examen> examenes = new ArrayList<Examen>();
+
 	public List<Examen> getExamenes() {
 		return examenes;
 	}
+
 	public void setExamenes(List<Examen> examenes) {
 		this.examenes = examenes;
 	}
+
 	public String getNombre() {
 		return nombre;
 	}
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+
 	public int getEdad() {
 		return edad;
 	}
+
 	public void setEdad(int edad) {
 		this.edad = edad;
 	}
+
 	public Alumno(String nombre, int edad) {
 		super();
 		this.nombre = nombre;
 		this.edad = edad;
 	}
+
 	public Alumno() {
 		super();
 	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(nombre);
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -58,7 +66,17 @@ public class Alumno {
 		Alumno other = (Alumno) obj;
 		return Objects.equals(nombre, other.nombre);
 	}
-	
-	
-	
+
+	public void addExamen(Examen examen) {
+
+		this.examenes.add(examen);
+		examen.setAlumno(this);
+	}
+
+	public void removeExamen(Examen examen) {
+
+		this.examenes.remove(examen);
+		examen.setAlumno(null);
+	}
+
 }
