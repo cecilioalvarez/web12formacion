@@ -22,7 +22,7 @@ public class AlumnoController {
 	@GetMapping("/listaalumnos")
 	public String listaAlumnos(Model modelo) {
 		List<Alumno> lista=alumnoRepository.buscarTodos();
-		System.out.println(lista.size());
+		
 		//asigna a la plantilla una nombre de lista junto con los datos
 		modelo.addAttribute("lista", lista);
 		

@@ -5,7 +5,7 @@
 		<tr th:each="alumno : ${lista}">
 			<td th:text="${alumno.nombre}"></td>
 			<td th:text="${alumno.edad}"></td>
-		</tr>
+			<td><a th:href="@{/verexamenes(nombre = ${alumno.nombre})}">ver examenes</a></td>		</tr>
 	</table>
 </body>
 </html>
