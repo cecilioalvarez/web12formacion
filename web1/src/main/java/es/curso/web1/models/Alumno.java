@@ -1,15 +1,28 @@
 package es.curso.web1.models;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Alumno {
 	@Id
 	private String nombre;
 	private int edad;
+	@OneToMany(mappedBy="alumno")
+	private List<Examen> examenes= new ArrayList<Examen>();
+	
+	
+	public List<Examen> getExamenes() {
+		return examenes;
+	}
+	public void setExamenes(List<Examen> examenes) {
+		this.examenes = examenes;
+	}
 	public String getNombre() {
 		return nombre;
 	}
