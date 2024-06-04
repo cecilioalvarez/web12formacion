@@ -35,8 +35,8 @@ public class AlumnosRestController {
 	}
 	//pedir la url con post usando json
 	@PostMapping
-	public void insertar(@RequestBody Alumno alumno){
-		 alumnoExamenService.insertar(alumno);
+	public void insertar(@RequestBody AlumnoDto alumnoDto){
+		 alumnoExamenService.insertar(new Alumno(alumnoDto.getNombre(),alumnoDto.getEdad()));
 	}
 	
 	
