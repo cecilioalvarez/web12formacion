@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
@@ -13,6 +15,7 @@ public class Alumno {
 	@Id
 	private String nombre;
 	private int edad;
+	@JsonIgnore
 	@OneToMany(mappedBy = "alumno")
 	private List<Examen> examenes = new ArrayList<Examen>();
 
