@@ -36,6 +36,17 @@ public class AlumnoController {
 	}
 	
 	
+	// redireccion
+	@GetMapping("/formularioalumno")
+	public String formularioAlumno() {
+		
+		return "formularioalumno.xhtml";
+		
+	}
+	
+	
+	
+	
 	@GetMapping("/verexamenes")
 	public String verExamenes(Model modelo, @RequestParam String nombre) {
 		List<Examen> lista=examenRepository.buscarExamenPorNombreAlumno(nombre);
