@@ -17,7 +17,7 @@ public class AlumnosRestController {
 	@Autowired
 	private AlumnoExamenService alumnoExamenService;
 
-	@GetMapping("/listaalumnos")
+	@GetMapping
 	public List<Alumno> buscarTodosAlumnos() {
 		return alumnoExamenService.buscarTodosAlumnos();
 	}
