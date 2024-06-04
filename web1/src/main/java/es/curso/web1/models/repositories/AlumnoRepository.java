@@ -3,6 +3,7 @@ package es.curso.web1.models.repositories;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import es.curso.web1.models.Alumno;
 import jakarta.persistence.EntityManager;
@@ -19,5 +20,10 @@ public class AlumnoRepository {
 		TypedQuery<Alumno> consulta= em.createQuery("select a from Alumno a"
 				,Alumno.class);
 		return consulta.getResultList();
+	}
+	@Transactional
+	public void insertar(Alumno alumno) {
+		
+		em.persist(alumno);
 	}
 }
