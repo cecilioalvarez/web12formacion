@@ -56,7 +56,7 @@ public class AlumnoController {
 
 		// asigna a la plantilla una nombre de lista junto con los datos
 		modelo.addAttribute("lista", lista);
-		return "listaAlumnos.xhtml";
+		return "listaalumnos.xhtml";
 
 	}
 
@@ -73,7 +73,7 @@ public class AlumnoController {
 
 	@GetMapping("/verexamenestotal")
 	public String verExamenesTotal(Model modelo) {
-		List<Examen> lista = examenRepository.buscarExamenes();
+		List<Examen> lista = examenRepository.buscarTodos();
 
 		// asigna a la plantilla una nombre de lista junto con los datos
 		modelo.addAttribute("lista", lista);

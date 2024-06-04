@@ -24,7 +24,7 @@ public class ExamenRepository {
 
 	}
 	
-	public List<Examen> buscarExamenes() {
+	public List<Examen> buscarTodos() {
 
 		TypedQuery<Examen> consulta = em.createQuery("select e from Examen e",
 				Examen.class);
