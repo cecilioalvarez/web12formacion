@@ -1,4 +1,4 @@
-package es.curso.web1.models.servicios;
+package es.curso.web1.services;
 
 import java.util.List;
 
@@ -7,8 +7,8 @@ import org.springframework.stereotype.Service;
 
 import es.curso.web1.models.Alumno;
 import es.curso.web1.models.Examen;
-import es.curso.web1.models.repositories.AlumnoRepository;
-import es.curso.web1.models.repositories.ExamenRepository;
+import es.curso.web1.repositories.AlumnoRepository;
+import es.curso.web1.repositories.ExamenRepository;
 
 @Service
 public class AlumnoExamenService {

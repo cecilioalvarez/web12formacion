@@ -1,4 +1,4 @@
-package es.curso.web1.models.controllers;
+package es.curso.web1.controllers;
 
 import java.util.List;
 
@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import es.curso.web1.models.Alumno;
 import es.curso.web1.models.Examen;
-import es.curso.web1.models.repositories.AlumnoRepository;
-import es.curso.web1.models.repositories.ExamenRepository;
-import es.curso.web1.models.servicios.AlumnoExamenService;
+import es.curso.web1.repositories.AlumnoRepository;
+import es.curso.web1.repositories.ExamenRepository;
+import es.curso.web1.services.AlumnoExamenService;
 
 @Controller
 public class AlumnoController {
