@@ -31,6 +31,9 @@ public class AlumnoExamenService {
 	public List<Examen> buscarTodosExamenes() {
 		return examenRepository.buscarTodos();
 	}
+	// metodo que tenemos aqui es el metodo del servicio
+	// y el servicio por lo que su logica implica
+	// se encarga de la logica de negocio
 	public void insertar(Examen examen) {
 		examenRepository.insertar(examen);
 	}
