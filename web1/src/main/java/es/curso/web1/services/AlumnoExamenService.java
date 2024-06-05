@@ -9,6 +9,8 @@ import es.curso.web1.models.Alumno;
 import es.curso.web1.models.Examen;
 import es.curso.web1.repositories.AlumnoRepository;
 import es.curso.web1.repositories.ExamenRepository;
+import es.curso.web1.services.bussinesdelegate.ExamenBusinessDelegate;
+import es.curso.web1.services.bussinesdelegate.dto.ExamenDtoWeb2;
 
 @Service
 public class AlumnoExamenService {
@@ -17,6 +19,10 @@ public class AlumnoExamenService {
 	private AlumnoRepository alumnoRepository;
 	@Autowired
 	private ExamenRepository examenRepository;
+	
+	@Autowired
+	private ExamenBusinessDelegate examenDelegate;
+	
 	
 	
 	public List<Alumno> buscarTodosAlumnos() {
@@ -36,6 +42,8 @@ public class AlumnoExamenService {
 	// se encarga de la logica de negocio
 	public void insertar(Examen examen) {
 		examenRepository.insertar(examen);
+		examenDelegate.insertar(new ExamenDtoWeb2(examen.getId(),examen.getTexto(),examen.getAsignatura()));
+		
 	}
 	
 	
