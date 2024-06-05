@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import es.curso.web1.dto.AlumnoDto;
+import es.curso.web1.dto.ExamenDto;
 import es.curso.web1.mapper.AlumnoMapper;
+import es.curso.web1.mapper.ExamenMapper;
 import es.curso.web1.models.Alumno;
 import es.curso.web1.services.AlumnoExamenService;
 
@@ -37,6 +39,13 @@ public class AlumnosRestController {
 	@PostMapping
 	public void insertar(@RequestBody AlumnoDto alumnoDto){
 		 alumnoExamenService.insertar(new Alumno(alumnoDto.getNombre(),alumnoDto.getEdad()));
+	}
+	
+	
+	@PostMapping("/{nombre}/examenes")
+	public void insertarExamen(@RequestBody ExamenDto examenDto){
+		
+		 alumnoExamenService.insertar(ExamenMapper.toBo(examenDto));
 	}
 	
 	

@@ -3,6 +3,7 @@ package es.curso.web1.repositories;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import es.curso.web1.models.Examen;
 import jakarta.persistence.EntityManager;
@@ -31,5 +32,10 @@ public class ExamenRepository {
 		
 		return consulta.getResultList();
 
+	}
+	@Transactional
+	public void insertar(Examen examen) {
+		
+		em.persist(examen);
 	}
 }

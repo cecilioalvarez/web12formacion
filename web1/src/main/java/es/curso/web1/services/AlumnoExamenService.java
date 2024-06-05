@@ -31,6 +31,9 @@ public class AlumnoExamenService {
 	public List<Examen> buscarTodosExamenes() {
 		return examenRepository.buscarTodos();
 	}
+	public void insertar(Examen examen) {
+		examenRepository.insertar(examen);
+	}
 	
 	
 	
