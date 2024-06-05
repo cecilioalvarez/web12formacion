@@ -2,6 +2,8 @@ package es.curso.web1;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 public class Web1Application {
@@ -10,4 +12,9 @@ public class Web1Application {
 		SpringApplication.run(Web1Application.class, args);
 	}
 
+	@Bean
+	public RestTemplate getPlantilla() {
+		
+		return new RestTemplate();
+	}
 }
